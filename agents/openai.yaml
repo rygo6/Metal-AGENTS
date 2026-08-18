@@ -1,0 +1,4 @@
+interface:
+  display_name: "Metal"
+  short_description: "Local Metal API headers, source, and an index of Apple's docs"
+  default_prompt: "Use $metal to answer this Metal question from the local repos and the linked Apple documentation."

@@ -1,0 +1,28 @@
+[submodule "references/metal-cpp"]
+	path = references/metal-cpp
+	url = https://github.com/apple/metal-cpp.git
+	branch = main
+[submodule "references/MoltenVK"]
+	path = references/MoltenVK
+	url = https://github.com/KhronosGroup/MoltenVK.git
+	branch = main
+[submodule "references/SPIRV-Cross"]
+	path = references/SPIRV-Cross
+	url = https://github.com/KhronosGroup/SPIRV-Cross.git
+	branch = main
+[submodule "references/metal-cpp-samples"]
+	path = references/metal-cpp-samples
+	url = https://github.com/metal-by-example/learn-metal-cpp-ios.git
+	branch = master
+[submodule "references/metal-samples"]
+	path = references/metal-samples
+	url = https://github.com/metal-by-example/sample-code.git
+	branch = master
+[submodule "references/applegpu"]
+	path = references/applegpu
+	url = https://github.com/dougallj/applegpu.git
+	branch = main
+[submodule "references/metal-benchmarks"]
+	path = references/metal-benchmarks
+	url = https://github.com/philipturner/metal-benchmarks.git
+	branch = main
