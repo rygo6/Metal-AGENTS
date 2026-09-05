@@ -1,11 +1,8 @@
 # Apple Metal Documentation Index
 
-Apple's Metal specification, framework reference, and sample library are not distributed as git
-repositories, so this file indexes them instead of mirroring them. Fetch these URLs live — Apple
-revises the content per OS release, and a copied page goes stale silently.
-
-Every link below was verified to return HTTP 200 when this index was written. If one 404s, Apple has
-reorganized it; search from the framework landing page rather than guessing a path.
+This index links to Apple's Metal language specification, framework reference, and samples. Fetch
+the relevant documents and check that their availability information matches the target OS and API
+version. If a link fails, search Apple's developer site or the framework landing page for its replacement.
 
 ## Normative specifications
 
@@ -14,8 +11,8 @@ reorganized it; search from the framework landing page rather than guessing a pa
 | Metal Shading Language Specification (PDF) | https://developer.apple.com/metal/Metal-Shading-Language-Specification.pdf |
 | Metal Feature Set Tables (PDF) | https://developer.apple.com/metal/Metal-Feature-Set-Tables.pdf |
 
-The MSL PDF is the only normative source for shader language rules. The Feature Set Tables PDF is the
-only authoritative source for per-GPU-family limits and capabilities.
+Use the MSL specification for shader language rules and the Feature Set Tables for GPU-family
+limits and capabilities. Check API documentation and runtime queries for target-specific availability.
 
 ## Framework reference
 
@@ -83,8 +80,8 @@ targets before answering; the object graphs and lifetimes differ.
 
 ## Usage notes
 
-- Prefer the local `references/metal-cpp/` headers for exact declarations and availability; use these
-  pages for semantics the headers cannot express.
+- Use the local `references/metal-cpp/` headers for C++ declarations. Check these pages or the target
+  SDK headers for OS availability, Swift and Objective-C declarations, and API semantics.
 - When a page and a local repo disagree, Apple's documentation wins for Metal semantics. MoltenVK and
   SPIRV-Cross describe one implementation's behavior, not the API contract.
-- Cite the full URL alongside any claim taken from this index so it can be re-checked.
+- Cite the document that supports the claim, using its full URL; the index itself is a navigation aid.

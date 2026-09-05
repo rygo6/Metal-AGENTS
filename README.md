@@ -5,15 +5,15 @@ cloned repositories and a curated index of Apple's official documentation, rathe
 on training data. It is agent-agnostic and works with any coding agent that supports skills (Claude
 Code, Codex, etc.).
 
-Apple does not publish the Metal specification, framework reference, or sample library as git
-repositories. Those are indexed as links in `references/LINKS.md` and fetched live, so answers track
-Apple's current text instead of a mirrored copy that goes stale.
+[references/LINKS.md](references/LINKS.md) indexes Apple's language specification, framework
+reference, and samples. Consult the relevant live documentation for semantics and availability,
+and match it to the target OS and API version.
 
 ### Reference repos included
 
 | Repo | Purpose |
 |------|---------|
-| `references/metal-cpp` | Apple's official C++ bindings — full Metal, Metal 4, MetalFX, QuartzCore, and Foundation API surface |
+| `references/metal-cpp` | Apple's official C++ bindings for Metal, Metal 4, MetalFX, QuartzCore, and Foundation |
 | `references/MoltenVK` | Production Metal usage, Vulkan-to-Metal mapping, and per-GPU-family limits |
 | `references/SPIRV-Cross` | MSL code generation, MSL version gating, and MSL language constraints |
 | `references/metal-cpp-samples` | Runnable metal-cpp examples |
@@ -31,17 +31,19 @@ Apple's current text instead of a mirrored copy that goes stale.
 
 Install once into the shared agent skills directory, then symlink it into each agent's skills folder.
 
-The reference repos are git submodules. Initialize them one level deep only — they are read-only
-references that are never built, so nested build dependencies are pure overhead:
+The reference repositories are Git submodules. Initialize them without nested dependencies for
+source lookup:
 
 ```bash
 git clone git@github.com:rygo6/Metal-AGENTS.git ~/.agents/skills/metal
 cd ~/.agents/skills/metal
 git submodule update --init
-git submodule update --remote
 ```
 
 Do not pass `--recursive` or clone with `--recurse-submodules`.
+
+The commands above use the recorded reference revisions. To deliberately refresh existing
+references, review local changes first, then run `git submodule update --remote` and inspect the result.
 
 Then link it into the agents you use:
 
@@ -60,7 +62,7 @@ mklink /J "%USERPROFILE%\.codex\skills\metal"  "%USERPROFILE%\.agents\skills\met
 
 ## Usage
 
-Once installed, invoke `/metal` from any agent that supports skills.
+Once installed, request the `metal` skill by name or use your agent’s skill picker or invocation syntax.
 
 ## Related skills
 
