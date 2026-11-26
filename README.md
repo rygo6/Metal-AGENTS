@@ -53,11 +53,20 @@ ln -s ~/.agents/skills/metal ~/.claude/skills/metal
 ln -s ~/.agents/skills/metal ~/.codex/skills/metal
 ```
 
+Google Antigravity (Gemini) loads global skills from `~/.gemini/config/skills`. Link the whole shared skills directory once, not each skill:
+
+```bash
+mkdir -p ~/.gemini/config
+ln -s ~/.agents/skills ~/.gemini/config/skills
+```
+
 On Windows, use `mklink /J` to create a junction instead (run in `cmd`, no admin rights needed):
 
 ```bat
 mklink /J "%USERPROFILE%\.claude\skills\metal" "%USERPROFILE%\.agents\skills\metal"
 mklink /J "%USERPROFILE%\.codex\skills\metal"  "%USERPROFILE%\.agents\skills\metal"
+mkdir "%USERPROFILE%\.gemini\config"
+mklink /J "%USERPROFILE%\.gemini\config\skills" "%USERPROFILE%\.agents\skills"
 ```
 
 ## Usage
